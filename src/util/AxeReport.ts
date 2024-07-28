@@ -18,6 +18,10 @@ interface NodeResult {
     fixSummaries: FixSummary[];
     index: number;
     relatedNodesAny: string[]
+    /**
+     * image encoded in base64
+     */
+    screenshot?: string;
 }
 
 interface Details {
