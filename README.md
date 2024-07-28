@@ -129,6 +129,7 @@ import { createHtmlReport } from 'axe-html-reporter';
             projectKey: 'JIRA_PROJECT_KEY',
             outputDir: 'axe-core-reports',
             reportFileName: 'exampleReport.html',
+            screenshotFunction: async selector => await (await page.$(selector))?.screenshot({encoding: 'base64'}),
         },
     });
     // creates html report with all optional parameters, saving the report into 'docs' directory with report file name 'index.html'
@@ -145,6 +146,7 @@ import { createHtmlReport } from 'axe-html-reporter';
             customSummary,
             outputDir: 'docs',
             reportFileName: 'index.html',
+            screenshotFunction: async selector => await (await page.$(selector))?.screenshot({encoding: 'base64'}),
         },
     });
 })();
